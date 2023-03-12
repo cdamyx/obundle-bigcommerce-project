@@ -29,6 +29,16 @@ category:
     <h1 class="page-heading">{{category.name}}</h1>
     {{{region name="category_below_header"}}}
 {{/unless}}
+
+
+<div class="category-buttons">
+    <input class="button button--primary" type="submit" value="Add All To Cart" />
+    {{#if cart_id}}
+        <input class="button button--secondary" type="submit" value="Remove All Items" />
+    {{/if}}
+</div>
+
+
 {{{category.description}}}
 <div class="page">
     {{#if category.faceted_search_enabled}}
