@@ -4,6 +4,15 @@ category:
     products:
         limit: {{theme_settings.categorypage_products_per_page}}
 ---
+{{#if customer.id}}
+    <div class="banners" data-banner-location="top">
+        <span class="custom-banner">NAME: {{customer.name}}</span>
+        <span class="custom-banner">EMAIL: {{customer.email}}</span>
+        {{#if customer.phone}}
+            <span class="custom-banner">PHONE: {{customer.phone}}</span>
+        {{/if}}
+    </div>
+{{/if}}
 {{inject "categoryProductsPerPage" theme_settings.categorypage_products_per_page}}
 {{#partial "head"}}
     {{#if pagination.category.previous}}
