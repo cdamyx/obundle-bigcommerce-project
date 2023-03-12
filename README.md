@@ -1,2 +1,2 @@
-# obundle-bigcommerce-project
-oBundle BigCommerce Project
+# oBundle BigCommerce Project Documentation
+Document once project is complete
