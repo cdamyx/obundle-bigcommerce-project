@@ -14,6 +14,7 @@ category:
     </div>
 {{/if}}
 {{inject "categoryProductsPerPage" theme_settings.categorypage_products_per_page}}
+{{inject "categoryProducts" category.products}}
 {{#partial "head"}}
     {{#if pagination.category.previous}}
         <link rel="prev" href="{{pagination.category.previous}}">
@@ -38,17 +39,13 @@ category:
     <h1 class="page-heading">{{category.name}}</h1>
     {{{region name="category_below_header"}}}
 {{/unless}}
-
-
+{{{category.description}}}
 <div class="category-buttons">
     <input class="button button--primary" type="submit" value="Add All To Cart" />
     {{#if cart_id}}
         <input class="button button--secondary" type="submit" value="Remove All Items" />
     {{/if}}
 </div>
-
-
-{{{category.description}}}
 <div class="page">
     {{#if category.faceted_search_enabled}}
         <aside class="page-sidebar" id="faceted-search-container">
@@ -71,6 +68,5 @@ category:
         {{{region name="category_below_content"}}}
     </div>
 </div>
-
 {{/partial}}
 {{> layout/base}}

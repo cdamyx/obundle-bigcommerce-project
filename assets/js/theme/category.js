@@ -46,6 +46,44 @@ export default class Category extends CatalogPage {
         $('a.reset-btn').on('click', () => this.setLiveRegionsAttributes($('span.reset-message'), 'status', 'polite'));
 
         this.ariaNotifyNoProducts();
+        $('.card-image').mouseover( function () {
+            $(this).attr("srcset", 'temp5');
+        })
+        // Older code I was testing - to be removed
+        // var prod = this.context.categoryProducts[0];
+        // $('.card-image').on('mouseover', (e) => this.cdaTest($(e.currentTarget)));
+
+        // this.cdaTest(prod);
+
+        // var mainImages = [];
+        // var rollOvers = [];
+        // this.context.categoryProducts.forEach(function(e, i) {
+        //     if (e.images[0]) {
+        //       mainImages[e.id] = e.images[0].data;
+        //     }
+        //     if (e.images[1]) {
+        //       rollOvers[e.id] = e.images[1].data;
+        //     }
+        //     });
+
+        //     rollOvers.forEach(function(image, id) {
+        //     image = image.replace('{:size}', '500x659');
+
+        //     $('a[data-product-id="' + id + '"]').closest('li.product').find('.card-image')
+        //       .on('mouseover', function() {
+        //       $(this).attr('src', image);
+        //     }).on('mouseout', function() {
+        //       $(this).attr('src', mainImages[id].replace('{:size}', '500x659'));
+        //     });
+        // });
+    }
+
+    cdaTest(target) {
+        // console.log("[assets/js/theme/category.js]: Hello World);
+        // e.addEventListener("onmouseover", function() { 
+        //   console.log('it worked');
+        // });
+        console.log(target);
     }
 
     ariaNotifyNoProducts() {
